@@ -52,6 +52,7 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
 
     body.dark .card {
@@ -67,6 +68,7 @@
 
     .today {
       border-left: 6px solid #22c55e;
+      box-shadow: 0 4px 14px rgba(34,197,94,0.3);
     }
 
     .content {
@@ -107,7 +109,7 @@
   <div class="countdown" id="countdown"></div>
 </div>
 
-<!-- DAY TEMPLATE -->
+<!-- ARRIVAL -->
 <div class="card" data-date="2026-07-04">
   <div class="header" onclick="toggle(this)">July 4 ✈️ Arrival</div>
   <div class="content">
@@ -115,11 +117,12 @@
     <div class="activity"><span class="icon">✈️</span>Heathrow arrival</div>
     <div class="activity"><span class="icon">🏨</span>Battersea apartment</div>
 
-    <a class="link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank">🚇 Plan route (TfL)</a>
+    <a class="link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank">🚇 Plan TfL route</a>
     <a class="link" href="https://maps.apple.com/?q=Battersea" target="_blank">📍 Open in Maps</a>
   </div>
 </div>
 
+<!-- SILVERSTONE -->
 <div class="card" data-date="2026-07-05">
   <div class="header" onclick="toggle(this)">July 5 🏁 Silverstone</div>
   <div class="content">
@@ -127,30 +130,33 @@
     <div class="activity"><span class="icon">🚆</span>Train 9:25</div>
     <div class="activity"><span class="icon">🏎️</span>Grand Prix</div>
 
-    <a class="link" href="trainline://">🚆 Open Trainline</a>
-    <a class="link" href="https://www.silverstone.co.uk/" target="_blank">🏁 Event Info</a>
+    <a class="link" href="https://www.thetrainline.com" target="_blank">🚆 Open Trainline</a>
+    <a class="link" href="https://www.silverstone.co.uk" target="_blank">🏁 Event Info</a>
   </div>
 </div>
 
+<!-- WEMBLEY -->
 <div class="card" data-date="2026-07-08">
   <div class="header" onclick="toggle(this)">July 8 🎸 Wembley</div>
   <div class="content">
     <div class="activity"><span class="icon">🚇</span>Travel ~1 hr</div>
     <div class="activity"><span class="icon">🎤</span>Concert 5 PM</div>
 
-    <a class="link" href="ticketmaster://">🎟️ Open Ticketmaster</a>
-    <a class="link" href="https://maps.apple.com/?q=Wembley%20Stadium" target="_blank">📍 Navigate</a>
+    <a class="link" href="https://www.ticketmaster.co.uk" target="_blank">🎟️ Ticketmaster</a>
+    <a class="link" href="https://maps.apple.com/?q=Wembley Stadium" target="_blank">📍 Navigate</a>
   </div>
 </div>
 
+<!-- FLIGHTS -->
 <div class="card">
   <div class="header" onclick="toggle(this)">✈️ Flights</div>
   <div class="content">
-    <div class="activity"><span class="icon">✈️</span>Return: LHR → ATL 9:20 AM</div>
-    <a class="link" href="delta://">✈️ Open Delta</a>
+    <div class="activity"><span class="icon">✈️</span>LHR → ATL 9:20 AM</div>
+    <a class="link" href="https://www.delta.com/mytrips" target="_blank">✈️ Open Delta</a>
   </div>
 </div>
 
+<!-- HOTEL -->
 <div class="card">
   <div class="header" onclick="toggle(this)">🏨 Accommodation</div>
   <div class="content">
@@ -159,6 +165,7 @@
   </div>
 </div>
 
+<!-- CHECKLIST -->
 <div class="card">
   <div class="header" onclick="toggle(this)">✅ Checklist</div>
   <div class="content">
@@ -188,19 +195,25 @@
   document.getElementById("countdown").innerText =
     diff > 0 ? "⏳ " + diff + " days until your trip!" : "✈️ You're on your trip!";
 
-  // Highlight + auto-open today's card
+  // ✅ PIN TODAY + AUTO OPEN
   const cards = document.querySelectorAll(".card");
+  const todayStart = new Date();
+  todayStart.setHours(0,0,0,0);
+
   cards.forEach(card => {
     const dateStr = card.getAttribute("data-date");
     if (!dateStr) return;
 
     const date = new Date(dateStr);
-    const todayStart = new Date();
-    todayStart.setHours(0,0,0,0);
 
     if (Math.abs(date - todayStart) < 86400000) {
       card.classList.add("today");
+
+      // open it
       card.querySelector(".content").style.display = "block";
+
+      // move to top (under header/buttons)
+      document.body.insertBefore(card, document.body.children[2]);
     }
   });
 </script>
