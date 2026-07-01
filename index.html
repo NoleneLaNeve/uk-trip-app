@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,14 +9,34 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
       background: #f0f2f5;
+      color: #222;
       padding: 15px;
       margin: 0;
+      transition: 0.3s;
+    }
+
+    body.dark {
+      background: #121212;
+      color: #f5f5f5;
     }
 
     h1 {
       text-align: center;
-      color: #222;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+    }
+
+    .toggle {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .toggle button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      background: #333;
+      color: white;
+      cursor: pointer;
     }
 
     .card {
@@ -27,27 +46,40 @@
       border-radius: 14px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       border-left: 6px solid #0078D4;
-      transition: transform 0.15s ease;
+      transition: all 0.3s;
     }
 
-    .card:hover {
-      transform: translateY(-3px);
+    body.dark .card {
+      background: #1e1e1e;
+      box-shadow: none;
     }
 
     h2 {
       margin: 0 0 6px;
-      font-size: 18px;
       color: #0078D4;
+      font-size: 18px;
     }
 
     .weather {
       font-size: 14px;
+      color: #777;
       margin-bottom: 10px;
-      color: #666;
+    }
+
+    body.dark .weather {
+      color: #bbb;
     }
 
     .activity {
-      margin: 5px 0;
+      margin: 6px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .icon {
+      width: 24px;
+      text-align: center;
+      margin-right: 8px;
     }
 
     .button {
@@ -60,14 +92,6 @@
       border-radius: 8px;
       font-size: 14px;
     }
-
-    .button:hover {
-      background: #005fa3;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
   </style>
 </head>
 
@@ -75,90 +99,59 @@
 
 <h1>🇬🇧 UK Trip Companion</h1>
 
-<div class="card">
-  <h2>July 4 ✈️ Arrival</h2>
-  <div class="weather">🌤️ 20–23°C</div>
-  <p class="activity">✈️ Heathrow arrival</p>
-  <p class="activity">🚇 Travel to Battersea (~1 hr)</p>
-  <p class="activity">🍽️ Dinner: Dishoom Battersea</p>
-  <a class="button" href="https://tfl.gov.uk/plan-a-journey/" target="_blank">🚇 Plan route</a>
+<div class="toggle">
+  <button onclick="toggleDark()">🌙 Toggle Dark Mode</button>
 </div>
 
 <div class="card">
-  <h2>July 5 🏁 Silverstone F1</h2>
+  <h2>July 4 ✈️ Arrival</h2>
+  <div class="weather">🌤️ 20–23°C</div>
+
+  <div class="activity"><span class="icon">✈️</span>Heathrow arrival</div>
+  <div class="activity"><span class="icon">🚇</span>Travel to Battersea (~1 hr)</div>
+  <div class="activity"><span class="icon">🍽️</span>Dinner: Dishoom Battersea</div>
+
+  <a class="button" href="https://tfl.gov.uk/plan-a-journey/" target="_blank">Plan route</a>
+</div>
+
+<div class="card">
+  <h2>July 5 🏁 Silverstone</h2>
   <div class="weather">🌤️ 22–23°C</div>
-  <p class="activity">🚇 Northern Line → Euston</p>
-  <p class="activity">🚆 Train 9:25</p>
-  <p class="activity">🏎️ Grand Prix</p>
-  <p class="activity">🚆 Return 20:42</p>
+
+  <div class="activity"><span class="icon">🚇</span>Tube to Euston (20 min)</div>
+  <div class="activity"><span class="icon">🚆</span>Train 9:25</div>
+  <div class="activity"><span class="icon">🏎️</span>Grand Prix</div>
+  <div class="activity"><span class="icon">🚆</span>Return 20:42</div>
 </div>
 
 <div class="card">
   <h2>July 6 🇬🇧 Central London</h2>
   <div class="weather">☀️ 22–24°C</div>
-  <p class="activity">🏰 Big Ben & Westminster</p>
-  <p class="activity">🍽️ Borough Market</p>
-  <p class="activity">🎭 Covent Garden</p>
-  <a class="button" href="https://maps.apple.com/?q=Big+Ben" target="_blank">📍 Open Map</a>
-</div>
 
-<div class="card">
-  <h2>July 7 🌿 Museums + Park</h2>
-  <div class="weather">🌤️ 21–23°C</div>
-  <p class="activity">🏛️ British Museum</p>
-  <p class="activity">🌳 Hyde Park</p>
+  <div class="activity"><span class="icon">🏰</span>Big Ben & Westminster</div>
+  <div class="activity"><span class="icon">🍽️</span>Borough Market</div>
+  <div class="activity"><span class="icon">🎭</span>Covent Garden</div>
+
+  <a class="button" href="https://maps.apple.com/?q=Big+Ben" target="_blank">Open map</a>
 </div>
 
 <div class="card">
   <h2>July 8 🎸 Wembley Concert</h2>
   <div class="weather">🌤️ 22–24°C</div>
-  <p class="activity">🚇 Travel ~1 hr</p>
-  <p class="activity">🍔 Boxpark Wembley</p>
-  <p class="activity">🎤 Show at 5 PM</p>
-  <a class="button" href="https://maps.apple.com/?q=Wembley+Stadium" target="_blank">📍 Navigate</a>
-</div>
 
-<div class="card">
-  <h2>July 9 🏰 Tower + Shoreditch</h2>
-  <div class="weather">☀️ 22–24°C</div>
-  <p class="activity">🏰 Tower of London</p>
-  <p class="activity">🌉 Tower Bridge</p>
-  <p class="activity">🎨 Shoreditch</p>
-</div>
+  <div class="activity"><span class="icon">🚇</span>Travel ~1 hr</div>
+  <div class="activity"><span class="icon">🍔</span>Boxpark Wembley</div>
+  <div class="activity"><span class="icon">🎤</span>Concert 5 PM</div>
 
-<div class="card">
-  <h2>July 10 🚆 Day Trip</h2>
-  <div class="weather">☀️ 22–24°C</div>
-  <p class="activity">🏰 Windsor OR 📚 Oxford</p>
-</div>
-
-<div class="card">
-  <h2>July 11 🛍️ Shopping</h2>
-  <div class="weather">☀️ 23–25°C</div>
-  <p class="activity">🛍️ Oxford Street</p>
-  <p class="activity">🍜 Soho</p>
-</div>
-
-<div class="card">
-  <h2>July 12 🌿 Relax</h2>
-  <div class="weather">🌤️ 22–23°C</div>
-  <p class="activity">🏙️ Battersea Power Station</p>
-  <p class="activity">🚶 Thames walk</p>
-</div>
-
-<div class="card">
-  <h2>July 13 ✨ Final Day</h2>
-  <div class="weather">🌤️ 21–23°C</div>
-  <p class="activity">👑 Buckingham Palace</p>
-  <p class="activity">🏡 Notting Hill</p>
-  <p class="activity">🍽️ Farewell dinner</p>
+  <a class="button" href="https://maps.apple.com/?q=Wembley+Stadium" target="_blank">Navigate</a>
 </div>
 
 <div class="card">
   <h2>July 14 ✈️ Departure</h2>
   <div class="weather">🌥️ 20–22°C</div>
-  <p class="activity">🚇 To Heathrow (~1 hr)</p>
-  <p class="activity">✈️ Flight 9:20 AM</p>
+
+  <div class="activity"><span class="icon">🚇</span>To Heathrow (~1 hr)</div>
+  <div class="activity"><span class="icon">✈️</span>Flight 9:20 AM</div>
 </div>
 
 <div class="card">
@@ -169,6 +162,12 @@
     <li>Tickets</li>
   </ul>
 </div>
+
+<script>
+  function toggleDark() {
+    document.body.classList.toggle("dark");
+  }
+</script>
 
 </body>
 </html>
