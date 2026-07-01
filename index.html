@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,22 +7,66 @@
   <meta charset="UTF-8">
 
   <style>
-    body { font-family: Arial; padding: 20px; }
-    h1 { color: #333; }
-    .card {
-      background: #f5f5f5;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
+      background: #f0f2f5;
       padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 10px;
+      margin: 0;
     }
-    a {
+
+    h1 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 16px;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border-left: 6px solid #0078D4;
+      transition: transform 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    h2 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      color: #0078D4;
+    }
+
+    .weather {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    .activity {
+      margin: 5px 0;
+    }
+
+    .button {
       display: inline-block;
-      margin-top: 8px;
-      padding: 8px 12px;
+      margin-top: 10px;
+      padding: 8px 14px;
       background: #0078D4;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .button:hover {
+      background: #005fa3;
+    }
+
+    ul {
+      padding-left: 20px;
     }
   </style>
 </head>
@@ -30,115 +75,94 @@
 
 <h1>🇬🇧 UK Trip Companion</h1>
 
-<!-- DAY 1 -->
 <div class="card">
-  <h2>July 4 – Arrival ✈️</h2>
-  <p>🌤️ 20–23°C</p>
-  <p>✈️ Arrive Heathrow</p>
-  <p>🚇 Travel to Battersea (~1 hr)</p>
-  <p>🍽️ Dinner: Dishoom Battersea</p>
-
-  <a href="https://tfl.gov.uk/plan-a-journey/" target="_blank">
-    🚇 Plan transport
-  </a>
+  <h2>July 4 ✈️ Arrival</h2>
+  <div class="weather">🌤️ 20–23°C</div>
+  <p class="activity">✈️ Heathrow arrival</p>
+  <p class="activity">🚇 Travel to Battersea (~1 hr)</p>
+  <p class="activity">🍽️ Dinner: Dishoom Battersea</p>
+  <a class="button" href="https://tfl.gov.uk/plan-a-journey/" target="_blank">🚇 Plan route</a>
 </div>
 
-<!-- DAY 2 -->
 <div class="card">
-  <h2>July 5 – Silverstone F1 🏁</h2>
-  <p>🌤️ 22–23°C</p>
-  <p>🚇 Northern Line → Euston (~20 min)</p>
-  <p>🚆 Train 9:25 → Milton Keynes</p>
-  <p>🏎️ Grand Prix</p>
-  <p>🚆 Return 20:42</p>
+  <h2>July 5 🏁 Silverstone F1</h2>
+  <div class="weather">🌤️ 22–23°C</div>
+  <p class="activity">🚇 Northern Line → Euston</p>
+  <p class="activity">🚆 Train 9:25</p>
+  <p class="activity">🏎️ Grand Prix</p>
+  <p class="activity">🚆 Return 20:42</p>
 </div>
 
-<!-- DAY 3 -->
 <div class="card">
-  <h2>July 6 – Central London 🇬🇧</h2>
-  <p>☀️ 22–24°C</p>
-  <p>🏰 Big Ben & Westminster</p>
-  <p>🍽️ Borough Market lunch</p>
-  <p>🎭 Covent Garden</p>
-
-  <a href="https://maps.apple.com/?q=Big+Ben" target="_blank">
-    📍 Open in Maps
-  </a>
+  <h2>July 6 🇬🇧 Central London</h2>
+  <div class="weather">☀️ 22–24°C</div>
+  <p class="activity">🏰 Big Ben & Westminster</p>
+  <p class="activity">🍽️ Borough Market</p>
+  <p class="activity">🎭 Covent Garden</p>
+  <a class="button" href="https://maps.apple.com/?q=Big+Ben" target="_blank">📍 Open Map</a>
 </div>
 
-<!-- DAY 4 -->
 <div class="card">
-  <h2>July 7 – Museums & Park 🌿</h2>
-  <p>🌤️ 21–23°C</p>
-  <p>🏛️ British Museum</p>
-  <p>🌳 Hyde Park</p>
+  <h2>July 7 🌿 Museums + Park</h2>
+  <div class="weather">🌤️ 21–23°C</div>
+  <p class="activity">🏛️ British Museum</p>
+  <p class="activity">🌳 Hyde Park</p>
 </div>
 
-<!-- DAY 5 -->
 <div class="card">
-  <h2>July 8 – Wembley Concert 🎸</h2>
-  <p>🌤️ 22–24°C</p>
-  <p>🚇 Travel ~1 hr to Wembley</p>
-  <p>🍔 Boxpark food</p>
-  <p>🎤 Concert 5 PM</p>
-
-  <a href="https://maps.apple.com/?q=Wembley+Stadium" target="_blank">
-    📍 Navigate
-  </a>
+  <h2>July 8 🎸 Wembley Concert</h2>
+  <div class="weather">🌤️ 22–24°C</div>
+  <p class="activity">🚇 Travel ~1 hr</p>
+  <p class="activity">🍔 Boxpark Wembley</p>
+  <p class="activity">🎤 Show at 5 PM</p>
+  <a class="button" href="https://maps.apple.com/?q=Wembley+Stadium" target="_blank">📍 Navigate</a>
 </div>
 
-<!-- DAY 6 -->
 <div class="card">
-  <h2>July 9 – Tower & Shoreditch 🏰</h2>
-  <p>☀️ 22–24°C</p>
-  <p>🏰 Tower of London</p>
-  <p>🌉 Tower Bridge</p>
-  <p>🎨 Shoreditch</p>
+  <h2>July 9 🏰 Tower + Shoreditch</h2>
+  <div class="weather">☀️ 22–24°C</div>
+  <p class="activity">🏰 Tower of London</p>
+  <p class="activity">🌉 Tower Bridge</p>
+  <p class="activity">🎨 Shoreditch</p>
 </div>
 
-<!-- DAY 7 -->
 <div class="card">
-  <h2>July 10 – Day Trip 🚆</h2>
-  <p>☀️ 22–24°C</p>
-  <p>🏰 Windsor OR Oxford</p>
+  <h2>July 10 🚆 Day Trip</h2>
+  <div class="weather">☀️ 22–24°C</div>
+  <p class="activity">🏰 Windsor OR 📚 Oxford</p>
 </div>
 
-<!-- DAY 8 -->
 <div class="card">
-  <h2>July 11 – Shopping 🛍️</h2>
-  <p>☀️ 23–25°C</p>
-  <p>🛍️ Oxford Street</p>
-  <p>🍜 Soho dining</p>
+  <h2>July 11 🛍️ Shopping</h2>
+  <div class="weather">☀️ 23–25°C</div>
+  <p class="activity">🛍️ Oxford Street</p>
+  <p class="activity">🍜 Soho</p>
 </div>
 
-<!-- DAY 9 -->
 <div class="card">
-  <h2>July 12 – Relax 🌿</h2>
-  <p>🌤️ 22–23°C</p>
-  <p>🏙️ Battersea Power Station</p>
-  <p>🚶 Thames walk</p>
+  <h2>July 12 🌿 Relax</h2>
+  <div class="weather">🌤️ 22–23°C</div>
+  <p class="activity">🏙️ Battersea Power Station</p>
+  <p class="activity">🚶 Thames walk</p>
 </div>
 
-<!-- DAY 10 -->
 <div class="card">
-  <h2>July 13 – Final Day ✨</h2>
-  <p>🌤️ 21–23°C</p>
-  <p>👑 Buckingham Palace</p>
-  <p>🏡 Notting Hill</p>
-  <p>🍽️ Farewell dinner</p>
+  <h2>July 13 ✨ Final Day</h2>
+  <div class="weather">🌤️ 21–23°C</div>
+  <p class="activity">👑 Buckingham Palace</p>
+  <p class="activity">🏡 Notting Hill</p>
+  <p class="activity">🍽️ Farewell dinner</p>
 </div>
 
-<!-- DAY 11 -->
 <div class="card">
-  <h2>July 14 – Departure ✈️</h2>
-  <p>🌥️ 20–22°C</p>
-  <p>🚇 Travel to Heathrow (~1 hr)</p>
-  <p>✈️ Flight 9:20 AM</p>
+  <h2>July 14 ✈️ Departure</h2>
+  <div class="weather">🌥️ 20–22°C</div>
+  <p class="activity">🚇 To Heathrow (~1 hr)</p>
+  <p class="activity">✈️ Flight 9:20 AM</p>
 </div>
 
-<!-- CHECKLIST -->
 <div class="card">
-  <h2>Checklist ✅</h2>
+  <h2>✅ Checklist</h2>
   <ul>
     <li>Passport</li>
     <li>Chargers</li>
