@@ -11,42 +11,58 @@
       font-family: -apple-system, BlinkMacSystemFont;
       background: #f4f6f8;
       margin: 0;
-      padding: 12px;
+      padding: 14px;
       transition: 0.3s;
     }
 
-    body.dark { background: #121212; color: white; }
+    body.dark {
+      background: #121212;
+      color: white;
+    }
 
-    h1 { text-align: center; }
-
-    .top {
+    h1 {
       text-align: center;
       margin-bottom: 10px;
     }
 
+    .top {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
     button {
-      padding: 8px 12px;
-      border-radius: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
       border: none;
       background: #0078D4;
       color: white;
       margin: 5px;
+      font-size: 14px;
+    }
+
+    .countdown {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-top: 5px;
     }
 
     .card {
       background: white;
-      margin: 10px 0;
-      border-radius: 14px;
+      margin: 12px 0;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    body.dark .card { background: #1e1e1e; }
+    body.dark .card {
+      background: #1e1e1e;
+    }
 
     .header {
-      padding: 14px;
+      padding: 16px;
       font-weight: bold;
       cursor: pointer;
+      font-size: 16px;
     }
 
     .today {
@@ -54,27 +70,30 @@
     }
 
     .content {
-      padding: 14px;
+      padding: 14px 16px;
       display: none;
     }
 
-    .activity { margin: 6px 0; }
+    .activity {
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .icon {
+      width: 26px;
+      margin-right: 8px;
+    }
 
     .link {
       display: block;
-      margin-top: 8px;
-      padding: 10px;
+      margin-top: 10px;
+      padding: 12px;
       background: #0078D4;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
-      margin-bottom: 6px;
-    }
-
-    .countdown {
-      font-size: 14px;
-      margin-top: 5px;
-      opacity: 0.7;
+      border-radius: 10px;
+      font-size: 15px;
     }
   </style>
 </head>
@@ -88,65 +107,58 @@
   <div class="countdown" id="countdown"></div>
 </div>
 
-<!-- ARRIVAL -->
+<!-- DAY TEMPLATE -->
 <div class="card" data-date="2026-07-04">
   <div class="header" onclick="toggle(this)">July 4 ✈️ Arrival</div>
   <div class="content">
-    <div class="activity">🌤️ 20–23°C</div>
-    <div class="activity">✈️ Heathrow arrival</div>
-    <div class="activity">🏨 Battersea apartment</div>
+    <div class="activity"><span class="icon">🌤️</span>20–23°C</div>
+    <div class="activity"><span class="icon">✈️</span>Heathrow arrival</div>
+    <div class="activity"><span class="icon">🏨</span>Battersea apartment</div>
 
-    <a class="link" href="https://tfl.gov.uk/plan-a-journey/">🚇 Open TfL</a>
-    <a class="link" href="maps://?q=Battersea">📍 Navigate</a>
+    <a class="link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank">🚇 Plan route (TfL)</a>
+    <a class="link" href="https://maps.apple.com/?q=Battersea" target="_blank">📍 Open in Maps</a>
   </div>
 </div>
 
-<!-- SILVERSTONE -->
 <div class="card" data-date="2026-07-05">
   <div class="header" onclick="toggle(this)">July 5 🏁 Silverstone</div>
   <div class="content">
-    <div class="activity">🚇 Tube → Euston</div>
-    <div class="activity">🚆 Train 9:25</div>
-    <div class="activity">🏎️ Grand Prix</div>
+    <div class="activity"><span class="icon">🚇</span>Tube → Euston</div>
+    <div class="activity"><span class="icon">🚆</span>Train 9:25</div>
+    <div class="activity"><span class="icon">🏎️</span>Grand Prix</div>
 
-    <a class="link" href="trainline://">🚆 Trainline App</a>
-    <a class="link" href="https://www.silverstone.co.uk/">🏁 Event Info</a>
+    <a class="link" href="trainline://">🚆 Open Trainline</a>
+    <a class="link" href="https://www.silverstone.co.uk/" target="_blank">🏁 Event Info</a>
   </div>
 </div>
 
-<!-- WEMBLEY -->
 <div class="card" data-date="2026-07-08">
   <div class="header" onclick="toggle(this)">July 8 🎸 Wembley</div>
   <div class="content">
-    <div class="activity">🚇 Travel ~1 hr</div>
-    <div class="activity">🎤 Concert 5 PM</div>
+    <div class="activity"><span class="icon">🚇</span>Travel ~1 hr</div>
+    <div class="activity"><span class="icon">🎤</span>Concert 5 PM</div>
 
-    <a class="link" href="ticketmaster://">🎟️ Ticketmaster</a>
-    <a class="link" href="maps://?q=Wembley Stadium">📍 Navigate</a>
+    <a class="link" href="ticketmaster://">🎟️ Open Ticketmaster</a>
+    <a class="link" href="https://maps.apple.com/?q=Wembley%20Stadium" target="_blank">📍 Navigate</a>
   </div>
 </div>
 
-<!-- FLIGHTS -->
 <div class="card">
   <div class="header" onclick="toggle(this)">✈️ Flights</div>
   <div class="content">
-    <div class="activity">Outbound + Return confirmed</div>
-    <div class="activity">LHR → ATL 9:20 AM</div>
-
+    <div class="activity"><span class="icon">✈️</span>Return: LHR → ATL 9:20 AM</div>
     <a class="link" href="delta://">✈️ Open Delta</a>
   </div>
 </div>
 
-<!-- HOTEL -->
 <div class="card">
-  <div class="header" onclick="toggle(this)">🏨 Stay</div>
+  <div class="header" onclick="toggle(this)">🏨 Accommodation</div>
   <div class="content">
-    <div class="activity">Urban Rest Battersea</div>
-    <div class="activity">July 4 → July 14</div>
+    <div class="activity"><span class="icon">🏨</span>Urban Rest Battersea</div>
+    <div class="activity"><span class="icon">📅</span>July 4 – July 14</div>
   </div>
 </div>
 
-<!-- CHECKLIST -->
 <div class="card">
   <div class="header" onclick="toggle(this)">✅ Checklist</div>
   <div class="content">
@@ -161,7 +173,8 @@
 <script>
   function toggle(el) {
     let content = el.nextElementSibling;
-    content.style.display = content.style.display === "block" ? "none" : "block";
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
   }
 
   function toggleDark() {
@@ -175,12 +188,19 @@
   document.getElementById("countdown").innerText =
     diff > 0 ? "⏳ " + diff + " days until your trip!" : "✈️ You're on your trip!";
 
-  // Highlight today
+  // Highlight + auto-open today's card
   const cards = document.querySelectorAll(".card");
   cards.forEach(card => {
-    const date = new Date(card.getAttribute("data-date"));
-    if (!isNaN(date) && Math.abs(date - today) < 86400000) {
+    const dateStr = card.getAttribute("data-date");
+    if (!dateStr) return;
+
+    const date = new Date(dateStr);
+    const todayStart = new Date();
+    todayStart.setHours(0,0,0,0);
+
+    if (Math.abs(date - todayStart) < 86400000) {
       card.classList.add("today");
+      card.querySelector(".content").style.display = "block";
     }
   });
 </script>
