@@ -106,6 +106,7 @@
 
 <div class="top">
   <button onclick="toggleDark()">🌙 Dark Mode</button>
+  <button onclick="shareTrip()">📤 Share Trip</button>
   <div class="countdown" id="countdown"></div>
 </div>
 
@@ -118,7 +119,7 @@
     <div class="activity"><span class="icon">🏨</span>Battersea apartment</div>
 
     <a class="link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank">🚇 Plan TfL route</a>
-    <a class="link" href="https://maps.apple.com/?q=Battersea" target="_blank">📍 Open in Maps</a>
+    <a class="link" href="https://maps.apple.com/?q=Battersea">📍 Open in Maps</a>
   </div>
 </div>
 
@@ -130,8 +131,8 @@
     <div class="activity"><span class="icon">🚆</span>Train 9:25</div>
     <div class="activity"><span class="icon">🏎️</span>Grand Prix</div>
 
-    <a class="link" href="https://www.thetrainline.com" target="_blank">🚆 Open Trainline</a>
-    <a class="link" href="https://www.silverstone.co.uk" target="_blank">🏁 Event Info</a>
+    <a class="link" href="https://www.thetrainline.com">🚆 Open Trainline</a>
+    <a class="link" href="https://www.silverstone.co.uk">🏁 Event Info</a>
   </div>
 </div>
 
@@ -142,8 +143,8 @@
     <div class="activity"><span class="icon">🚇</span>Travel ~1 hr</div>
     <div class="activity"><span class="icon">🎤</span>Concert 5 PM</div>
 
-    <a class="link" href="https://www.ticketmaster.co.uk" target="_blank">🎟️ Ticketmaster</a>
-    <a class="link" href="https://maps.apple.com/?q=Wembley Stadium" target="_blank">📍 Navigate</a>
+    <a class="link" href="https://www.ticketmaster.co.uk">🎟️ Ticketmaster</a>
+    <a class="link" href="https://maps.apple.com/?q=Wembley%20Stadium">📍 Navigate</a>
   </div>
 </div>
 
@@ -152,7 +153,7 @@
   <div class="header" onclick="toggle(this)">✈️ Flights</div>
   <div class="content">
     <div class="activity"><span class="icon">✈️</span>LHR → ATL 9:20 AM</div>
-    <a class="link" href="https://www.delta.com/mytrips" target="_blank">✈️ Open Delta</a>
+    <a class="link" href="https://www.delta.com/mytrips">✈️ Open Delta</a>
   </div>
 </div>
 
@@ -188,6 +189,17 @@
     document.body.classList.toggle("dark");
   }
 
+  window.location.href
+    };
+
+    if (navigator.share) {
+      navigator.share(shareData);
+    } else {
+      navigator.clipboard.writeText(shareData.url);
+      alert("Link copied! You can paste it to share.");
+    }
+  }
+
   // Countdown
   const tripDate = new Date("2026-07-03");
   const today = new Date();
@@ -209,14 +221,13 @@
     if (Math.abs(date - todayStart) < 86400000) {
       card.classList.add("today");
 
-      // open it
+      // open
       card.querySelector(".content").style.display = "block";
 
-      // move to top (under header/buttons)
+      // move to top
       document.body.insertBefore(card, document.body.children[2]);
     }
   });
 </script>
 
 </body>
-</html>
