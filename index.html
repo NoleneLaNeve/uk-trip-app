@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,90 +8,59 @@
 
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
-      background: #f0f2f5;
-      color: #222;
-      padding: 15px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI";
+      background: #f4f6f8;
+      padding: 12px;
       margin: 0;
       transition: 0.3s;
     }
 
-    body.dark {
-      background: #121212;
-      color: #f5f5f5;
-    }
+    body.dark { background: #121212; color: white; }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+    h1 { text-align: center; }
 
-    .toggle {
-      text-align: center;
-      margin-bottom: 15px;
-    }
+    .toggle { text-align: center; margin-bottom: 10px; }
 
-    .toggle button {
-      padding: 8px 14px;
-      border: none;
+    button {
+      padding: 8px 12px;
       border-radius: 8px;
-      background: #333;
+      border: none;
+      background: #0078D4;
       color: white;
-      cursor: pointer;
     }
 
     .card {
       background: white;
-      padding: 16px;
-      margin-bottom: 16px;
+      margin: 10px 0;
       border-radius: 14px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      border-left: 6px solid #0078D4;
-      transition: all 0.3s;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
 
-    body.dark .card {
-      background: #1e1e1e;
-      box-shadow: none;
+    body.dark .card { background: #1e1e1e; }
+
+    .header {
+      padding: 14px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    h2 {
-      margin: 0 0 6px;
-      color: #0078D4;
-      font-size: 18px;
+    .content {
+      padding: 14px;
+      display: none;
     }
 
-    .weather {
-      font-size: 14px;
-      color: #777;
-      margin-bottom: 10px;
-    }
+    .activity { margin: 6px 0; }
 
-    body.dark .weather {
-      color: #bbb;
-    }
-
-    .activity {
-      margin: 6px 0;
-      display: flex;
-      align-items: center;
-    }
-
-    .icon {
-      width: 24px;
-      text-align: center;
-      margin-right: 8px;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 14px;
+    .link {
+      display: block;
+      margin-top: 8px;
+      padding: 10px;
       background: #0078D4;
       color: white;
       text-decoration: none;
       border-radius: 8px;
-      font-size: 14px;
+      margin-bottom: 6px;
     }
   </style>
 </head>
@@ -100,70 +70,71 @@
 <h1>🇬🇧 UK Trip Companion</h1>
 
 <div class="toggle">
-  <button onclick="toggleDark()">🌙 Toggle Dark Mode</button>
+  <button onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<!-- DAY -->
+<div class="card">
+  <div class="header" onclick="toggle(this)">July 4 ✈️ Arrival</div>
+  <div class="content">
+    <div class="activity">🌤️ 20–23°C</div>
+    <div class="activity">✈️ Heathrow arrival</div>
+    <div class="activity">🚇 Travel to Battersea</div>
+
+    <a class="link" href="https://tfl.gov.uk/plan-a-journey/">🚇 Open TfL Go</a>
+    <a class="link" href="maps://?q=Battersea">📍 Navigate</a>
+  </div>
 </div>
 
 <div class="card">
-  <h2>July 4 ✈️ Arrival</h2>
-  <div class="weather">🌤️ 20–23°C</div>
+  <div class="header" onclick="toggle(this)">July 5 🏁 Silverstone</div>
+  <div class="content">
+    <div class="activity">🚇 Tube → Euston</div>
+    <div class="activity">🚆 9:25 Train</div>
+    <div class="activity">🏎️ Grand Prix</div>
 
-  <div class="activity"><span class="icon">✈️</span>Heathrow arrival</div>
-  <div class="activity"><span class="icon">🚇</span>Travel to Battersea (~1 hr)</div>
-  <div class="activity"><span class="icon">🍽️</span>Dinner: Dishoom Battersea</div>
-
-  <a class="button" href="https://tfl.gov.uk/plan-a-journey/" target="_blank">Plan route</a>
+    <a class="link" href="trainline://">🚆 Open Trainline</a>
+    <a class="link" href="https://www.silverstone.co.uk/">🏁 Silverstone Info</a>
+  </div>
 </div>
 
 <div class="card">
-  <h2>July 5 🏁 Silverstone</h2>
-  <div class="weather">🌤️ 22–23°C</div>
+  <div class="header" onclick="toggle(this)">July 8 🎸 Wembley</div>
+  <div class="content">
+    <div class="activity">🚇 1 hr travel</div>
+    <div class="activity">🎤 Concert 5PM</div>
 
-  <div class="activity"><span class="icon">🚇</span>Tube to Euston (20 min)</div>
-  <div class="activity"><span class="icon">🚆</span>Train 9:25</div>
-  <div class="activity"><span class="icon">🏎️</span>Grand Prix</div>
-  <div class="activity"><span class="icon">🚆</span>Return 20:42</div>
+    <a class="link" href="ticketmaster://">🎟️ Open Ticketmaster</a>
+    <a class="link" href="maps://?q=Wembley Stadium">📍 Navigate</a>
+  </div>
 </div>
 
 <div class="card">
-  <h2>July 6 🇬🇧 Central London</h2>
-  <div class="weather">☀️ 22–24°C</div>
+  <div class="header" onclick="toggle(this)">Flights ✈️</div>
+  <div class="content">
+    <div class="activity">Outbound + Return Flights</div>
 
-  <div class="activity"><span class="icon">🏰</span>Big Ben & Westminster</div>
-  <div class="activity"><span class="icon">🍽️</span>Borough Market</div>
-  <div class="activity"><span class="icon">🎭</span>Covent Garden</div>
-
-  <a class="button" href="https://maps.apple.com/?q=Big+Ben" target="_blank">Open map</a>
+    <a class="link" href="delta://">✈️ Open Delta App</a>
+  </div>
 </div>
 
 <div class="card">
-  <h2>July 8 🎸 Wembley Concert</h2>
-  <div class="weather">🌤️ 22–24°C</div>
-
-  <div class="activity"><span class="icon">🚇</span>Travel ~1 hr</div>
-  <div class="activity"><span class="icon">🍔</span>Boxpark Wembley</div>
-  <div class="activity"><span class="icon">🎤</span>Concert 5 PM</div>
-
-  <a class="button" href="https://maps.apple.com/?q=Wembley+Stadium" target="_blank">Navigate</a>
-</div>
-
-<div class="card">
-  <h2>July 14 ✈️ Departure</h2>
-  <div class="weather">🌥️ 20–22°C</div>
-
-  <div class="activity"><span class="icon">🚇</span>To Heathrow (~1 hr)</div>
-  <div class="activity"><span class="icon">✈️</span>Flight 9:20 AM</div>
-</div>
-
-<div class="card">
-  <h2>✅ Checklist</h2>
-  <ul>
-    <li>Passport</li>
-    <li>Chargers</li>
-    <li>Tickets</li>
-  </ul>
+  <div class="header" onclick="toggle(this)">Checklist ✅</div>
+  <div class="content">
+    <ul>
+      <li>Passport</li>
+      <li>Chargers</li>
+      <li>Tickets</li>
+    </ul>
+  </div>
 </div>
 
 <script>
+  function toggle(el) {
+    let content = el.nextElementSibling;
+    content.style.display = content.style.display === "block" ? "none" : "block";
+  }
+
   function toggleDark() {
     document.body.classList.toggle("dark");
   }
