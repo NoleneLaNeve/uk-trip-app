@@ -52,7 +52,6 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: 0.3s;
     }
 
     body.dark .card {
@@ -106,7 +105,6 @@
 
 <div class="top">
   <button onclick="toggleDark()">🌙 Dark Mode</button>
-  <button onclick="shareTrip()">📤 Share Trip</button>
   <div class="countdown" id="countdown"></div>
 </div>
 
@@ -119,7 +117,7 @@
     <div class="activity"><span class="icon">🏨</span>Battersea apartment</div>
 
     <a class="link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank">🚇 Plan TfL route</a>
-    <a class="link" href="https://maps.apple.com/?q=Battersea">📍 Open in Maps</a>
+    <a class="link" href="https://maps.apple.com/?q=Battersea" target="_blank">📍 Open in Maps</a>
   </div>
 </div>
 
@@ -131,8 +129,8 @@
     <div class="activity"><span class="icon">🚆</span>Train 9:25</div>
     <div class="activity"><span class="icon">🏎️</span>Grand Prix</div>
 
-    <a class="link" href="https://www.thetrainline.com">🚆 Open Trainline</a>
-    <a class="link" href="https://www.silverstone.co.uk">🏁 Event Info</a>
+    <a class="link" href="https://www.thetrainline.com" target="_blank">🚆 Open Trainline</a>
+    <a class="link" href="https://www.silverstone.co.uk" target="_blank">🏁 Event Info</a>
   </div>
 </div>
 
@@ -143,8 +141,8 @@
     <div class="activity"><span class="icon">🚇</span>Travel ~1 hr</div>
     <div class="activity"><span class="icon">🎤</span>Concert 5 PM</div>
 
-    <a class="link" href="https://www.ticketmaster.co.uk">🎟️ Ticketmaster</a>
-    <a class="link" href="https://maps.apple.com/?q=Wembley%20Stadium">📍 Navigate</a>
+    <a class="link" href="https://www.ticketmaster.co.uk" target="_blank">🎟️ Ticketmaster</a>
+    <a class="link" href="https://maps.apple.com/?q=Wembley%20Stadium" target="_blank">📍 Navigate</a>
   </div>
 </div>
 
@@ -153,7 +151,7 @@
   <div class="header" onclick="toggle(this)">✈️ Flights</div>
   <div class="content">
     <div class="activity"><span class="icon">✈️</span>LHR → ATL 9:20 AM</div>
-    <a class="link" href="https://www.delta.com/mytrips">✈️ Open Delta</a>
+    <a class="link" href="https://www.delta.com/mytrips" target="_blank">✈️ Open Delta</a>
   </div>
 </div>
 
@@ -181,33 +179,11 @@
 <script>
   function toggle(el) {
     let content = el.nextElementSibling;
-    content.style.display =
-      content.style.display === "block" ? "none" : "block";
-  }
-
-  function toggleDark() {
-    document.body.classList.toggle("dark");
-  }
-
-  window.location.href
-    };
-
-    if (navigator.share) {
-      navigator.share(shareData);
-    } else {
-      navigator.clipboard.writeText(shareData.url);
-      alert("Link copied! You can paste it to share.");
-    }
-  }
-
-  // Countdown
-  const tripDate = new Date("2026-07-03");
-  const today = new Date();
-  const diff = Math.ceil((tripDate - today) / (1000 * 60 * 60 * 24));
+    content.styleonst diff = Math.ceil((tripDate - today) / (1000 * 60 * 60 * 24));
   document.getElementById("countdown").innerText =
     diff > 0 ? "⏳ " + diff + " days until your trip!" : "✈️ You're on your trip!";
 
-  // ✅ PIN TODAY + AUTO OPEN
+  // ✅ Pin today's view
   const cards = document.querySelectorAll(".card");
   const todayStart = new Date();
   todayStart.setHours(0,0,0,0);
@@ -220,14 +196,11 @@
 
     if (Math.abs(date - todayStart) < 86400000) {
       card.classList.add("today");
-
-      // open
       card.querySelector(".content").style.display = "block";
-
-      // move to top
       document.body.insertBefore(card, document.body.children[2]);
     }
   });
 </script>
 
 </body>
+</html>
