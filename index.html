@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +7,7 @@
 
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #f4f6f8;
       margin: 0;
       padding: 14px;
@@ -38,6 +37,7 @@
       color: white;
       margin: 5px;
       font-size: 14px;
+      cursor: pointer;
     }
 
     .countdown {
@@ -85,11 +85,15 @@
     .icon {
       width: 26px;
       margin-right: 8px;
+      display: inline-block;
+      text-align: center;
+      flex-shrink: 0;
     }
 
     .link {
       display: block;
       margin-top: 10px;
+      margin-bottom: 8px;
       padding: 12px;
       background: #0078D4;
       color: white;
@@ -107,6 +111,7 @@
     }
 
     .map-link {
+      margin-top: 14px;
       background: #16A34A;
     }
   </style>
@@ -129,7 +134,7 @@
     <div class="activity"><span class="icon">✈️</span>Heathrow arrival</div>
     <div class="activity"><span class="icon">🏨</span>Battersea apartment</div>
 
-    tflgo://📱 Open TfL Go App</a>
+    <a class="link app-link" href="tflgo://">📱 Open TfL Go App</a>
     <a class="link web-link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener noreferrer">🌐 TfL Journey Planner</a>
     <a class="link map-link" href="https://maps.apple.com/?q=Battersea" target="_blank" rel="noopener noreferrer">📍 Open Battersea in Maps</a>
   </div>
@@ -143,10 +148,10 @@
     <div class="activity"><span class="icon">🚆</span>Train 9:25</div>
     <div class="activity"><span class="icon">🏎️</span>Grand Prix</div>
 
-    tflgo://📱 Open TfL Go App</a>
+    <a class="link app-link" href="tflgo://">📱 Open TfL Go App</a>
     <a class="link web-link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener noreferrer">🌐 TfL Journey Planner</a>
 
-    trainline://📱 Open Trainline App</a>
+    <a class="link app-link" href="trainline://">📱 Open Trainline App</a>
     <a class="link web-link" href="https://www.thetrainline.com" target="_blank" rel="noopener noreferrer">🌐 Trainline Website</a>
 
     <a class="link web-link" href="https://www.silverstone.co.uk" target="_blank" rel="noopener noreferrer">🏁 Silverstone Event Info</a>
@@ -160,11 +165,11 @@
     <div class="activity"><span class="icon">🚇</span>Travel ~1 hr</div>
     <div class="activity"><span class="icon">🎤</span>Concert 5 PM</div>
 
-    tflgo://📱 Open TfL Go App</a>
+    <a class="link app-link" href="tflgo://">📱 Open TfL Go App</a>
     <a class="link web-link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener noreferrer">🌐 TfL Journey Planner</a>
 
     <a class="link web-link" href="https://www.ticketmaster.co.uk" target="_blank" rel="noopener noreferrer">🎟️ Ticketmaster Website</a>
-    https://maps.apple.com/?q=Wembley%20Stadium📍 Navigate to Wembley</a>
+    <a class="link map-link" href="https://maps.apple.com/?q=Wembley%20Stadium" target="_blank" rel="noopener noreferrer">📍 Navigate to Wembley</a>
   </div>
 </div>
 
@@ -177,11 +182,10 @@
     <div class="activity"><span class="icon">📍</span>Green Park Station, next to The Ritz Hotel</div>
     <div class="activity"><span class="icon">⏰</span>Arrive 15–20 minutes early</div>
 
-    tflgo://📱 Open TfL Go App</a>
+    <a class="link app-link" href="tflgo://">📱 Open TfL Go App</a>
     <a class="link web-link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener noreferrer">🌐 TfL Journey Planner</a>
-
-    https://www.seelondonbynight.com🌃 See London by Night Website</a>
-    https://maps.apple.com/?q=Green%20Park%20Station%20London📍 Navigate to Green Park Station</a>
+    <a class="link web-link" href="https://www.seelondonbynight.com" target="_blank" rel="noopener noreferrer">🌃 See London by Night Website</a>
+    <a class="link map-link" href="https://maps.apple.com/?q=Green%20Park%20Station%20London" target="_blank" rel="noopener noreferrer">📍 Navigate to Green Park Station</a>
   </div>
 </div>
 
@@ -195,10 +199,9 @@
     <div class="activity"><span class="icon">🚆</span>5:55 PM return from Goring-by-Sea</div>
     <div class="activity"><span class="icon">🏠</span>7:21 PM arrive Clapham Junction</div>
 
-    trainline://📱 Open Trainline App</a>
+    <a class="link app-link" href="trainline://">📱 Open Trainline App</a>
     <a class="link web-link" href="https://www.thetrainline.com" target="_blank" rel="noopener noreferrer">🌐 Trainline Website</a>
-
-    https://maps.apple.com/?q=Goring-by-Sea📍 Open Goring-by-Sea in Maps</a>
+    <a class="link map-link" href="https://maps.apple.com/?q=Goring-by-Sea" target="_blank" rel="noopener noreferrer">📍 Open Goring-by-Sea in Maps</a>
   </div>
 </div>
 
@@ -212,11 +215,10 @@
     <div class="activity"><span class="icon">🍔</span>Explore Camden Market</div>
     <div class="activity"><span class="icon">🎶</span>Street food & music</div>
 
-    tflgo://📱 Open TfL Go App</a>
+    <a class="link app-link" href="tflgo://">📱 Open TfL Go App</a>
     <a class="link web-link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener noreferrer">🌐 TfL Journey Planner</a>
-
-    https://maps.apple.com/?q=Hamleys%20Regent%20Street🧸 Navigate to Hamleys</a>
-    https://maps.apple.com/?q=Camden%20Market🛍️ Navigate to Camden Market</a>
+    <a class="link map-link" href="https://maps.apple.com/?q=Hamleys%20Regent%20Street" target="_blank" rel="noopener noreferrer">🧸 Navigate to Hamleys</a>
+    <a class="link map-link" href="https://maps.apple.com/?q=Camden%20Market" target="_blank" rel="noopener noreferrer">🛍️ Navigate to Camden Market</a>
   </div>
 </div>
 
@@ -226,7 +228,7 @@
   <div class="content">
     <div class="activity"><span class="icon">✈️</span>LHR → ATL 9:20 AM</div>
 
-    delta://📱 Open Delta App</a>
+    <a class="link app-link" href="delta://">📱 Open Delta App</a>
     <a class="link web-link" href="https://www.delta.com/mytrips" target="_blank" rel="noopener noreferrer">🌐 Delta My Trips Website</a>
   </div>
 </div>
@@ -238,7 +240,7 @@
     <div class="activity"><span class="icon">🏨</span>Urban Rest Battersea</div>
     <div class="activity"><span class="icon">📅</span>July 4 – July 14</div>
 
-    https://maps.apple.com/?q=Urban%20Rest%20Battersea📍 Open Accommodation in Maps</a>
+    <a class="link map-link" href="https://maps.apple.com/?q=Urban%20Rest%20Battersea" target="_blank" rel="noopener noreferrer">📍 Open Accommodation in Maps</a>
   </div>
 </div>
 
@@ -275,7 +277,7 @@
   // ✅ PIN TODAY + AUTO OPEN
   const cards = document.querySelectorAll(".card");
   const todayStart = new Date();
-  todayStart.setHours(0,0,0,0);
+  todayStart.setHours(0, 0, 0, 0);
 
   cards.forEach(card => {
     const dateStr = card.getAttribute("data-date");
