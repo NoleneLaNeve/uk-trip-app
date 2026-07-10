@@ -97,6 +97,18 @@
       border-radius: 10px;
       font-size: 15px;
     }
+
+    .app-link {
+      background: #0A84FF;
+    }
+
+    .web-link {
+      background: #2563EB;
+    }
+
+    .map-link {
+      background: #16A34A;
+    }
   </style>
 </head>
 
@@ -117,8 +129,9 @@
     <div class="activity"><span class="icon">✈️</span>Heathrow arrival</div>
     <div class="activity"><span class="icon">🏨</span>Battersea apartment</div>
 
-    <a class="link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank">🚇 Plan TfL route</a>
-    <a class="link" href="https://maps.apple.com/?q=Battersea" target="_blank">📍 Open in Maps</a>
+    tflgo://📱 Open TfL Go App</a>
+    <a class="link web-link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener noreferrer">🌐 TfL Journey Planner</a>
+    <a class="link map-link" href="https://maps.apple.com/?q=Battersea" target="_blank" rel="noopener noreferrer">📍 Open Battersea in Maps</a>
   </div>
 </div>
 
@@ -130,8 +143,13 @@
     <div class="activity"><span class="icon">🚆</span>Train 9:25</div>
     <div class="activity"><span class="icon">🏎️</span>Grand Prix</div>
 
-    <a class="link" href="https://www.thetrainline.com" target="_blank">🚆 Open Trainline</a>
-    <a class="link" href="https://www.silverstone.co.uk" target="_blank">🏁 Event Info</a>
+    tflgo://📱 Open TfL Go App</a>
+    <a class="link web-link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener noreferrer">🌐 TfL Journey Planner</a>
+
+    trainline://📱 Open Trainline App</a>
+    <a class="link web-link" href="https://www.thetrainline.com" target="_blank" rel="noopener noreferrer">🌐 Trainline Website</a>
+
+    <a class="link web-link" href="https://www.silverstone.co.uk" target="_blank" rel="noopener noreferrer">🏁 Silverstone Event Info</a>
   </div>
 </div>
 
@@ -142,8 +160,63 @@
     <div class="activity"><span class="icon">🚇</span>Travel ~1 hr</div>
     <div class="activity"><span class="icon">🎤</span>Concert 5 PM</div>
 
-    <a class="link" href="https://www.ticketmaster.co.uk" target="_blank">🎟️ Ticketmaster</a>
-    <a class="link" href="https://maps.apple.com/?q=Wembley Stadium" target="_blank">📍 Navigate</a>
+    tflgo://📱 Open TfL Go App</a>
+    <a class="link web-link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener noreferrer">🌐 TfL Journey Planner</a>
+
+    <a class="link web-link" href="https://www.ticketmaster.co.uk" target="_blank" rel="noopener noreferrer">🎟️ Ticketmaster Website</a>
+    https://maps.apple.com/?q=Wembley%20Stadium📍 Navigate to Wembley</a>
+  </div>
+</div>
+
+<!-- LONDON BY NIGHT -->
+<div class="card" data-date="2026-07-10">
+  <div class="header" onclick="toggle(this)">July 10 🌃 London by Night</div>
+  <div class="content">
+    <div class="activity"><span class="icon">🚌</span>Open-top night bus tour</div>
+    <div class="activity"><span class="icon">🕣</span>Departure 8:30 PM</div>
+    <div class="activity"><span class="icon">📍</span>Green Park Station, next to The Ritz Hotel</div>
+    <div class="activity"><span class="icon">⏰</span>Arrive 15–20 minutes early</div>
+
+    tflgo://📱 Open TfL Go App</a>
+    <a class="link web-link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener noreferrer">🌐 TfL Journey Planner</a>
+
+    https://www.seelondonbynight.com🌃 See London by Night Website</a>
+    https://maps.apple.com/?q=Green%20Park%20Station%20London📍 Navigate to Green Park Station</a>
+  </div>
+</div>
+
+<!-- GORING-BY-SEA -->
+<div class="card" data-date="2026-07-11">
+  <div class="header" onclick="toggle(this)">July 11 🌊 Goring-by-Sea</div>
+  <div class="content">
+    <div class="activity"><span class="icon">🚆</span>10:23 AM depart Clapham Junction</div>
+    <div class="activity"><span class="icon">🌊</span>11:48 AM arrive Goring-by-Sea</div>
+    <div class="activity"><span class="icon">☀️</span>Beach & seaside day</div>
+    <div class="activity"><span class="icon">🚆</span>5:55 PM return from Goring-by-Sea</div>
+    <div class="activity"><span class="icon">🏠</span>7:21 PM arrive Clapham Junction</div>
+
+    trainline://📱 Open Trainline App</a>
+    <a class="link web-link" href="https://www.thetrainline.com" target="_blank" rel="noopener noreferrer">🌐 Trainline Website</a>
+
+    https://maps.apple.com/?q=Goring-by-Sea📍 Open Goring-by-Sea in Maps</a>
+  </div>
+</div>
+
+<!-- HAMLEYS + CAMDEN -->
+<div class="card" data-date="2026-07-12">
+  <div class="header" onclick="toggle(this)">July 12 🧸 Hamleys & Camden</div>
+  <div class="content">
+    <div class="activity"><span class="icon">🧸</span>Visit Hamleys</div>
+    <div class="activity"><span class="icon">🛍️</span>Shop Regent Street</div>
+    <div class="activity"><span class="icon">🚇</span>Travel to Camden Town</div>
+    <div class="activity"><span class="icon">🍔</span>Explore Camden Market</div>
+    <div class="activity"><span class="icon">🎶</span>Street food & music</div>
+
+    tflgo://📱 Open TfL Go App</a>
+    <a class="link web-link" href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener noreferrer">🌐 TfL Journey Planner</a>
+
+    https://maps.apple.com/?q=Hamleys%20Regent%20Street🧸 Navigate to Hamleys</a>
+    https://maps.apple.com/?q=Camden%20Market🛍️ Navigate to Camden Market</a>
   </div>
 </div>
 
@@ -152,7 +225,9 @@
   <div class="header" onclick="toggle(this)">✈️ Flights</div>
   <div class="content">
     <div class="activity"><span class="icon">✈️</span>LHR → ATL 9:20 AM</div>
-    <a class="link" href="https://www.delta.com/mytrips" target="_blank">✈️ Open Delta</a>
+
+    delta://📱 Open Delta App</a>
+    <a class="link web-link" href="https://www.delta.com/mytrips" target="_blank" rel="noopener noreferrer">🌐 Delta My Trips Website</a>
   </div>
 </div>
 
@@ -162,6 +237,8 @@
   <div class="content">
     <div class="activity"><span class="icon">🏨</span>Urban Rest Battersea</div>
     <div class="activity"><span class="icon">📅</span>July 4 – July 14</div>
+
+    https://maps.apple.com/?q=Urban%20Rest%20Battersea📍 Open Accommodation in Maps</a>
   </div>
 </div>
 
